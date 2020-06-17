@@ -1,0 +1,16 @@
+[package]
+name = "quantum"
+version = "0.1.0"
+authors = ["Sreehari Sreedev <sreeharisreedev1@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[profile.release]
+lto = true
+[features]
+default = []
+bsp_rpi3 = ["cortex-a", "register"]
+bsp_rpi4 = ["cortex-a", "register"]
+[dependencies]
+cortex-a = { version = "*", optional = true }
+register = { version = "*", optional = true }
